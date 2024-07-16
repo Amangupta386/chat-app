@@ -8,10 +8,14 @@ import { useParams } from "react-router-dom";
 const AppLayout = (WrappedComponent) => {
   // eslint-disable-next-line react/display-name
 
-  return (props) => {
+  return (props) => { 
     
   const params = useParams()
   const chatId = params.chatId;
+
+  const handleDeleteChat=(e, _id, groupChat)=>{
+    e.preventDefault()
+  }
 
     return (
       <>
@@ -22,16 +26,18 @@ const AppLayout = (WrappedComponent) => {
             item
             sm={4}
             md={3}
-            sx={{ display: { xs: "none", sm: "block" } }}
+            // sx={{ display: { xs: "none", sm: "block" } }}
             height={"100%"}
           >
-            <ChatList chats={sampleChats} chatId={"1"}
-            newMessagesAlert={[{
-              chatId:"1",
+            <ChatList chats={sampleChats} chatId={chatId}
+             /* newMessagesAlert={[{
+              chatId,
               count:4,
-            }]}
-            onlineUsers={["1", "2"]}
+            }]} */
+            handleDeleteChat={handleDeleteChat}
+            // onlineUsers={["1", "2"]}
             />
+           
           </Grid>
           <Grid
             item
@@ -40,7 +46,6 @@ const AppLayout = (WrappedComponent) => {
             md={5}
             lg={6}
             height={"100%"}
-
           >
             <WrappedComponent {...props} />
           </Grid>

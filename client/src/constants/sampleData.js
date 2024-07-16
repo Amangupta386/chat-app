@@ -8,7 +8,7 @@ export const sampleChats = [
   },
 
   {
-    avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
+    avatar: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXgBVKmJ9vU0MnmE9v5XoLoJNvOkI8Bpn1IQ&s"],
     name: "John Boi",
     _id: "2",
     groupChat: false,

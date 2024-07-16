@@ -33,7 +33,6 @@ function Header() {
   const [isNotification, setIsNotification] = useState(false);
 
   const handleMobile = () => {
-    console.log("mobile");
     setMobile((prev) => !prev);
   };
 
@@ -46,7 +45,6 @@ function Header() {
   };
 
   const openSearchDialog = () => {
-    console.log("search dialog");
     setisSearch((prev) => !prev);
   };
 

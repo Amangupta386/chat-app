@@ -1,9 +1,10 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Avatar, Box, Stack, Typography } from "@mui/material";
 import React, { memo } from "react";
 import { Link } from "react-router-dom";
+import AvatarCard from "./AvatarCard";
 
 function ChatItem({
-  avatar = [],
+  avatar,
   name = "",
   _id = "",
   groupChat = false,
@@ -11,14 +12,15 @@ function ChatItem({
   isOnline,
   newMessageAlert,
   index = 0,
-  handleDeleteChatOpen,
+  handleDeleteChat,
 }) {
+ 
   return (
    <Link
    sx={{
     padding:"0",
    }}
-   to={`/chat/${_id}`} onContextMenu={(e)=>handleDeleteChatOpen(e, _id, groupChat)}>
+   to={`/chat/${_id}`} onContextMenu={(e)=>handleDeleteChat(e, _id, groupChat)}>
     <div style={{ display: "flex", alignItems: "center",
       gap: "1rem",
       padding:"1rem",
@@ -26,8 +28,7 @@ function ChatItem({
       color:sameSender?"white":"unset",
       position:"relative"
      }}>
-
-      {/* Avatar Card */}
+      <AvatarCard avatar={avatar} />
       <Stack>
         <Typography>{name}</Typography>
         {

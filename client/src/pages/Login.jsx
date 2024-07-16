@@ -30,7 +30,6 @@ function Login() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("submitted");
   }
 
   const Username = useInputValidation("",userNameValidators);
